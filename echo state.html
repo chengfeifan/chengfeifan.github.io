@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+*{margin:0;padding:0;}
+body {
+	font:13.34px helvetica,arial,freesans,clean,sans-serif;
+	color:black;
+	line-height:1.4em;
+	background-color: #F8F8F8;
+	padding: 0.7em;
+}
+p {
+	margin:1em 0;
+	line-height:1.5em;
+}
+table {
+	font-size:inherit;
+	font:100%;
+	margin:1em;
+}
+table th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+input[type=text],input[type=password],input[type=image],textarea{font:99% helvetica,arial,freesans,sans-serif;}
+select,option{padding:0 .25em;}
+optgroup{margin-top:.5em;}
+pre,code{font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;}
+pre {
+	margin:1em 0;
+	font-size:12px;
+	background-color:#eee;
+	border:1px solid #ddd;
+	padding:5px;
+	line-height:1.5em;
+	color:#444;
+	overflow:auto;
+	-webkit-box-shadow:rgba(0,0,0,0.07) 0 1px 2px inset;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;border-radius:3px;
+}
+pre code {
+	padding:0;
+	font-size:12px;
+	background-color:#eee;
+	border:none;
+}
+code {
+	font-size:12px;
+	background-color:#f8f8ff;
+	color:#444;
+	padding:0 .2em;
+	border:1px solid #dedede;
+}
+img{border:0;max-width:100%;}
+abbr{border-bottom:none;}
+a{color:#4183c4;text-decoration:none;}
+a:hover{text-decoration:underline;}
+a code,a:link code,a:visited code{color:#4183c4;}
+h2,h3{margin:1em 0;}
+h1,h2,h3,h4,h5,h6{border:0;}
+h1{font-size:170%;border-top:4px solid #aaa;padding-top:.5em;margin-top:1.5em;}
+h1:first-child{margin-top:0;padding-top:.25em;border-top:none;}
+h2{font-size:150%;margin-top:1.5em;border-top:4px solid #e0e0e0;padding-top:.5em;}
+h3{margin-top:1em;}
+hr{border:1px solid #ddd;}
+ul{margin:1em 0 1em 2em;}
+ol{margin:1em 0 1em 2em;}
+ul li,ol li{margin-top:.5em;margin-bottom:.5em;}
+ul ul,ul ol,ol ol,ol ul{margin-top:0;margin-bottom:0;}
+blockquote{margin:1em 0;border-left:5px solid #ddd;padding-left:.6em;color:#555;}
+dt{font-weight:bold;margin-left:1em;}
+dd{margin-left:2em;margin-bottom:1em;}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>Echo state network</title>
+
+</head>
+<body>
+<!--文献阅读-->
+
+
+<h1>Echo state network</h1>
+
+<p><a href="http://cl.ly/2X3w2I3M1H2v/httpminds.jacobs-university.desitesdefaultfile.pdf">文献在线阅读</a> <br/>
+时间：2016年5月7日15:24</p>
+
+<h4>文献信息</h4>
+
+<table>
+<thead>
+<tr>
+<th align="center">作者</th>
+<th align="center">出版日期</th>
+<th align="center">关键词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Herbert Jageger</td>
+<td align="center">January 26, 2010</td>
+<td align="center">RNN SL</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>文章题目：<em>The "echo state" approach to analysing and trainning recurrent neural networks - with an Erratum note</em></p>
+
+<h2>文章主要内容</h2>
+
+<h3>文章介绍</h3>
+
+<p>$$$\textbf{x}(n)$$$代表着循环神经网络<em>RNN</em>的神经元的状态，神经网络的输入是$$$\textbf{u}(n),\textbf{u}(n-1),...$$$，那么$$$\textbf{x}(n)$$$可以表示为$$$\textbf{u}(n)$$$的函数，即$$\textbf{x}=\textbf{E}(\textbf{u}(n),\textbf{u}(n-1),...)$$ 也就意味着$$$\textbf{x}(n)$$$可以作为过去输入的<em>echo</em></p>
+
+<h3>什么是<em>echo state</em></h3>
+
+<p>假设一个神经网络有<em>K</em>个输入单元，<em>N</em>个中间的神经元和<em>L</em>个输出单元，分别可用下面的公式表示：<br/>
+* <strong>输入单元</strong>：$$$\textbf{u}(n)=(u_1(n),u_2(n),...,u_K(n))$$$<br/>
+* <strong>中间神经元</strong>：$$$\textbf{x}(n)=(x_1(n),x_2(n),...,x_N(n))$$$<br/>
+* <strong>输出单元</strong>：$$$\textbf{y}(n)=(y_1(n),y_2(n),...,y_L(n))$$$<br/>
+<img src="http://cl.ly/2r431U3d2F0Z/Image%202016-05-07%20at%2015.12.16.png" alt="示意图" /></p>
+
+<h4>连接矩阵</h4>
+
+<ul>
+<li><strong>输入连接矩阵</strong>$$$\textbf{W}^{in}=(w_{ij}^{in})$$$为<em>N</em> $$$\times$$$ <em>K</em>矩阵</li>
+<li><strong>中间神经元连接矩阵</strong>$$$\textbf{W}=(w_{ij})$$$为<em>N</em> $$$\times$$$ <em>N</em>矩阵</li>
+<li><strong>输出连接矩阵</strong>$$$\textbf{W}^{out}=(w_{ij}^{out})$$$为<em>L</em> $$$\times$$$ <em>(K+N+L)</em>矩阵</li>
+<li><strong>反馈连接矩阵</strong>$$$\textbf{W}^{back}=(w_{ij}^{back})$$$为<em>N</em> $$$\times$$$ <em>L</em></li>
+</ul>
+
+
+<h4>连接</h4>
+
+<ul>
+<li><strong>神经元的状态更新</strong>：$$\textbf{x}(n+1)=\textbf{f}(\textbf{W}^{in}\textbf{u}(n+1)+\textbf{W}\textbf{x}(n)+\textbf{W}^{back}\textbf{y}(n))$$</li>
+<li><strong>神经元输出</strong>：$$\textbf{y}(n+1)=\textbf{f}^{out}(\textbf{W}^{out}(\textbf{u}(n+1),\textbf{x}(n+1),\textbf{y}(n))$$</li>
+</ul>
+
+
+<h4>含有leaking decay rate</h4>
+
+<ul>
+<li><strong>神经元的状态更新</strong>：$$\textbf{x}(n+1)=(1-C)\textbf{x}(n)+C(\textbf{f}(\textbf{W}^{in}\textbf{u}(n+1)+\textbf{W}\textbf{x}(n)+\textbf{W}^{back}\textbf{y}(n)))$$</li>
+</ul>
+
+
+<h4>一般前提</h4>
+
+<ol>
+<li>输入<strong>u</strong>(n)来自于紧致集空间<em>U</em></li>
+<li>神经网络状态在紧致集<em>A</em></li>
+</ol>
+
+
+<h3>Examples</h3>
+
+<h4>toy examples</h4>
+
+<p><a href="https://github.com/chengfeifan/reservoir-computing/blob/master/R/toy-example.R">代码</a></p>
+
+<h5>训练参数和结果</h5>
+
+<table>
+<thead>
+<tr>
+<th>神经元个数</th>
+<th>训练长度</th>
+<th>训练误差</th>
+<th>测试长度</th>
+<th>测试误差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100</td>
+<td>2000</td>
+<td>4.0045e-15</td>
+<td>2000</td>
+<td>3.7963e-15</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><strong>输入连接矩阵</strong>$$$\textbf{W}^{in}$$$：100$$$\times$$$1的矩阵，矩阵元素均匀从{-1,1}中选取</li>
+<li><strong>中间神经元连接矩阵</strong>$$$\textbf{W}$$$：100$$$\times$$$100的矩阵，矩阵元素值分别以{0.95，0.025，0.025}的概率选取{0，+0.4，—0.4}</li>
+</ul>
+
+
+<p><img src="http://cl.ly/3h1a3J3s131Q/Image%202016-05-09%20at%2010.27.07.png" alt="训练结果" /></p>
+
+<h4>Markey Glass Example</h4>
+
+<p><a href="https://github.com/chengfeifan/reservoir-computing/blob/master/minimalESN.R">代码</a></p>
+
+<h5>训练参数和结果</h5>
+
+<table>
+<thead>
+<tr>
+<th>神经元个数</th>
+<th>训练长度</th>
+<th>训练误差</th>
+<th>测试长度</th>
+<th>测试误差</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>2000</td>
+<td>3.9986e-09</td>
+<td>2000</td>
+<td>2.5998e-06</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><strong>输入矩阵连接神经元</strong>：为400×1的矩阵，元素值均匀从(-0.5,0.5)中随机选取</li>
+<li><strong>输出矩阵连接神经元</strong>：为400×400的矩阵，元素值分别从(-0.5,0.5)中随机选取</li>
+<li><strong>leaking integrator</strong> C：0.3</li>
+</ul>
+
+
+<p><img src="http://cl.ly/2t2Y320U0n2H/Image%202016-05-09%20at%2010.46.55.png" alt="训练结果" /></p>
+</body>
+</html>
