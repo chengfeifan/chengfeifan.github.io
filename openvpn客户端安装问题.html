@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+*{margin:0;padding:0;}
+body {
+	font:13.34px helvetica,arial,freesans,clean,sans-serif;
+	color:black;
+	line-height:1.4em;
+	background-color: #F8F8F8;
+	padding: 0.7em;
+}
+p {
+	margin:1em 0;
+	line-height:1.5em;
+}
+table {
+	font-size:inherit;
+	font:100%;
+	margin:1em;
+}
+table th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+input[type=text],input[type=password],input[type=image],textarea{font:99% helvetica,arial,freesans,sans-serif;}
+select,option{padding:0 .25em;}
+optgroup{margin-top:.5em;}
+pre,code{font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;}
+pre {
+	margin:1em 0;
+	font-size:12px;
+	background-color:#eee;
+	border:1px solid #ddd;
+	padding:5px;
+	line-height:1.5em;
+	color:#444;
+	overflow:auto;
+	-webkit-box-shadow:rgba(0,0,0,0.07) 0 1px 2px inset;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;border-radius:3px;
+}
+pre code {
+	padding:0;
+	font-size:12px;
+	background-color:#eee;
+	border:none;
+}
+code {
+	font-size:12px;
+	background-color:#f8f8ff;
+	color:#444;
+	padding:0 .2em;
+	border:1px solid #dedede;
+}
+img{border:0;max-width:100%;}
+abbr{border-bottom:none;}
+a{color:#4183c4;text-decoration:none;}
+a:hover{text-decoration:underline;}
+a code,a:link code,a:visited code{color:#4183c4;}
+h2,h3{margin:1em 0;}
+h1,h2,h3,h4,h5,h6{border:0;}
+h1{font-size:170%;border-top:4px solid #aaa;padding-top:.5em;margin-top:1.5em;}
+h1:first-child{margin-top:0;padding-top:.25em;border-top:none;}
+h2{font-size:150%;margin-top:1.5em;border-top:4px solid #e0e0e0;padding-top:.5em;}
+h3{margin-top:1em;}
+hr{border:1px solid #ddd;}
+ul{margin:1em 0 1em 2em;}
+ol{margin:1em 0 1em 2em;}
+ul li,ol li{margin-top:.5em;margin-bottom:.5em;}
+ul ul,ul ol,ol ol,ol ul{margin-top:0;margin-bottom:0;}
+blockquote{margin:1em 0;border-left:5px solid #ddd;padding-left:.6em;color:#555;}
+dt{font-weight:bold;margin-left:1em;}
+dd{margin-left:2em;margin-bottom:1em;}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>OpenVPN客户端安装问题</title>
+
+</head>
+<body>
+<h1>OpenVPN客户端安装问题</h1>
+
+<blockquote><p>最近想配置一下<code>166.111.17.126</code>的网络，由于<code>166.111.17.69</code>只有一张网卡，没有办法配置网关服务器，而在<code>69</code>的机器上刚好配置了<code>pptp</code>和<code>openVPN</code>，所以想通过VPN来配置<code>126</code>网络</p></blockquote>
+
+<h2>centos下PPTP类型VPN连接</h2>
+
+<p>最开始是想通过<code>pptp</code>类型<code>VPN</code>进行连接，所以在网上搜了许多教程，来试着配置<code>VPN</code>，结果发现都不行，不过也可以积累一下素材，下面放一下比较好的一些网址：</p>
+
+<ul>
+<li><a href="https://www.centos.org/forums/viewtopic.php?t=26810">PPTP类型VPN连接</a></li>
+<li><a href="http://www.jiangmiao.org/blog/1914.html">中文教程</a></li>
+</ul>
+
+
+<h2>openVPN下的网络连接</h2>
+
+<p>总的来说<code>openvpn</code>的连接是非常方便，在没有网的情况下，但是我遇到了下面的一些问题：</p>
+
+<h3>为了重新联网</h3>
+
+<p>查看了一下<a href="https://www.howtoforge.com/tutorial/how-to-install-openvpn-on-centos-7/">教程</a>，发现没有offline安装<code>openvpn</code>的办法，所以为了能够使机器联网，我就将<code>69</code>和<code>126</code>的IP互换，首先在连接的时候，冒出了下面的提示：</p>
+
+<p><code>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:VZB7X3m11WQ8IMxVWBJ/irYnZ7dYrNF7PVlmpqg3TOE.
+Please contact your system administrator.
+Add correct host key in /Users/cheng/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /Users/cheng/.ssh/known_hosts:14
+ECDSA host key for 166.111.17.69 has changed and you have requested strict checking.
+Host key verification failed.</code></p>
+
+<p>这个大概提示你，你之前连接的机器发生了变化，所以你需要下面的指令来清除原来连接留下的痕迹，所以需要用到下面的指令：</p>
+
+<pre><code>ssh-keygen -R 166.111.17.69
+</code></pre>
+
+<p>清除之后，就可以连接原来<code>ip</code>所对应的结果</p>
+
+<h3>install openvpn 的问题</h3>
+
+<p>在可以联网之后，我以为简单的使用指令：</p>
+
+<pre><code>yum install openvpn
+</code></pre>
+
+<p>就可以安装<code>openvpn</code>的客户端了，可惜我too young了，直接安装的结果就是：</p>
+
+<pre><code>找不到此包
+</code></pre>
+
+<p>问了一下小学弟，发现可能是<code>yum</code>中源包不全的问题，遂安装<code>epel</code>，使用下面的指令：</p>
+
+<pre><code>sudo yum install epel-release
+yum --enablerepo=epel install openvpn
+</code></pre>
+
+<p>我以为这样子就可以解决问题，但是发现还是没有办法安装<code>openvpn</code>，最后在网上发现，可能是<code>epel</code>源的问题，遂卸掉<code>epel</code>，重新安装<code>epel</code></p>
+
+<pre><code>sudo rpm -e epel-release
+sudo yum install epel-release
+</code></pre>
+
+<p>最终通过指令：</p>
+
+<pre><code>yum --enablerepo=epel install openvpn
+</code></pre>
+
+<p>安装了<code>openvpn</code></p>
+
+<h3>文件配置问题</h3>
+
+<p>我用的文件是其璠给的<code>seamless-tunet.ovpn</code>文件，我把这个文件拷贝到<code>126</code>服务器下的<code>\usr\local</code>下面，按照网上给的教程，用下面指令：</p>
+
+<pre><code>openvpn --config /usr/local/seamless-tunet.ovpn
+</code></pre>
+
+<p>最后服务器卡在了一个地方：</p>
+
+<pre><code>Tue Oct 18 22:03:43 2016 /usr/sbin/ip route add 166.111.17.69/32 dev em1
+Tue Oct 18 22:03:43 2016 /usr/sbin/ip route del 0.0.0.0/0
+Tue Oct 18 22:03:43 2016 /usr/sbin/ip route add 0.0.0.0/0 via 172.25.0.9
+Tue Oct 18 22:03:43 2016 /usr/sbin/ip route add 172.25.0.0/16 via 172.25.0.9
+Tue Oct 18 22:03:43 2016 Initialization Sequence Completed
+</code></pre>
+
+<p>并且也<code>ping</code>不通外网，经过两个小时的搜索，发现在在命令行中加入<code>--daemon</code>即可以解决问题</p>
+
+<pre><code>openvpn --config /usr/local/seamless-tunet.ovpn --daemon
+</code></pre>
+
+<p>这个后缀的意思，大概是把这个进程变成守护进程</p>
+
+<h2>网关服务器</h2>
+
+<p>只要网关服务器是双网卡，这些都本不是问题，但是对于单网卡，只能通过这种本笨办法来连接网络了，随便搜一篇网关服务器的配置，其实发现还是很简单，这体现硬件的重要性</p>
+
+<ul>
+<li><a href="http://baiseda.iteye.com/blog/1333697">网关服务器配置</a></li>
+</ul>
+
+
+<h2>openVPN搭建教程</h2>
+
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-setup-and-configure-an-openvpn-server-on-centos-7">openvpn搭建</a></p>
+
+<h3>openvpn增加用户</h3>
+
+<p>在<code>/etc/openvpn/passwd</code>文件中增加用户和密码</p>
+</body>
+</html>
