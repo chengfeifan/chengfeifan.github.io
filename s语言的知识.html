@@ -1,0 +1,1065 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>S语言的知识</title>
+
+</head>
+<body>
+<p>最近对<code>S</code>语言比较感兴趣，于是开始学习<code>S</code>语言，相当于是对于<code>R</code>语言的一个补充</p>
+
+<h2>S语言的知识</h2>
+
+<h3>变量和函数</h3>
+
+<p>S语言的变量可以用<code>variable</code>直接进行定义，例如</p>
+
+<p><code>variable x,y,z;</code></p>
+
+<p>S语言的变量不需要提前声明，通过等式可以直接定义，例如</p>
+
+<p><code>x=3</code>,<code>y=sin(5.6)</code>,<code>z="I think, therefore i am"</code></p>
+
+<p>S语言的函数可以用<code>define</code>直接进行定义，例如</p>
+
+<pre><code>define compute_average (x,y)
+{
+  variable s =x +y;
+  return s/2.0
+}
+</code></pre>
+
+<h3>qualifier</h3>
+
+<p>通过<code>qualifier</code>为一个函数增加修饰成分，例如</p>
+
+<pre><code>define plot (x, y)
+    {
+        variable linestyle = qualifier ("linestyle", "solid");
+        variable color = qualifier ("color", "black");
+        sys_set_color (color);
+        sys_set_linestyle (linestyle);
+        sys_plot (x,y);
+    }
+</code></pre>
+
+<p>其中<code>linestyle</code>和<code>color</code>是修饰成分</p>
+
+<h3>strings</h3>
+
+<p>S语言可以对字符操作，而不考虑给字符分配内存空间，其中<code>strcat</code>可以用<code>+</code>代替，例如：</p>
+
+<pre><code>define concat_3_strings (a, b, c)
+{
+    return strcat (a, b, c);
+}
+</code></pre>
+
+<p>在相同情况下，C语言需要写下面的语句：</p>
+
+<pre><code>char *concat_3_strings (char *a, char *b, char *c)
+{
+    unsigned int len;
+    char *result;
+    len = strlen (a) + strlen (b) + strlen (c);
+    if (NULL == (result = (char *) malloc (len + 1)))
+    exit (1);
+    strcpy (result, a);
+    strcat (result, b);
+    strcat (result, c);
+    return result;
+}
+</code></pre>
+
+<h3>Referencing and Dereferencing</h3>
+
+<p>和其他大多数语言一样，用<code>&amp;</code>可以用来应用其他<code>object</code>或者是<code>function</code>，例如：</p>
+
+<pre><code>define compute_functional_sum (funct)
+{
+    variable i, s;
+    s = 0;
+    for (i = 0; i &lt; 10; i++)
+    {
+    s += (@funct)(i);
+    }
+    return s;
+}
+variable sin_sum = compute_functional_sum (&amp;sin);
+variable cos_sum = compute_functional_sum (&amp;cos);
+</code></pre>
+
+<p>解引用，用符号<code>@</code>，类似于C语言中的指针，例如：</p>
+
+<pre><code>define set_xyz (x, y, z)
+{
+    @x = 1;
+    @y = 2;
+    @z = 3;
+}
+variable X, Y, Z;
+set_xyz (&amp;X, &amp;Y, &amp;Z);
+</code></pre>
+
+<p>其中C语言的样式</p>
+
+<pre><code>void set_xyz (int *x, int *y, int *z)
+{
+    *x = 1;
+    *y = 2;
+    *z = 3;
+}
+</code></pre>
+
+<h3>Arrays</h3>
+
+<p>S语言支持多维数组，例如：</p>
+
+<pre><code>variable A = Int_Type [10];  # 创建10个整数的一维数组
+variable B = Int_Type [10, 3]; # 创建10*3整数的二维数组
+variable C = [1, 3, 5, 7, 9];  #直接生成数组
+variable D=[1:9:2]; #创建以2为间距，从1到9的数组
+variable E=[0:1:#1000]； #创建1000个0到1的浮点数
+</code></pre>
+
+<p>Arrays类型变量可以直接在函数中使用：</p>
+
+<pre><code>define init_array (a)
+{
+    variable i, imax;
+    imax = length (a);
+    for (i = 0; i &lt; imax; i++)
+    {
+        a[i] = 7;
+    }
+}
+variable A = Int_Type [10];
+init_array (A);
+</code></pre>
+
+<p>Arrays的类型</p>
+
+<ul>
+<li>Double_Type : double</li>
+<li>Complex_Type: complex</li>
+<li>String_Type : string</li>
+<li>Ref_Type : reference</li>
+<li>Any_Type</li>
+</ul>
+
+
+<p>S语言与C语言之间的对比</p>
+
+<pre><code>variable X, Y; X = [0:2*PI:0.01]; Y = 20 * sin (X);
+
+double *X, *Y; 
+unsigned int i, n;
+ n = (2 * PI) / 0.01 + 1; 
+ X = (double *) malloc (n * sizeof (double));
+ Y = (double *) malloc (n * sizeof (double)); 
+ for (i = 0; i &lt; n; i++)
+ { 
+     X[i] = i * 0.01; 
+     Y[i] = 20 * sin (X[i]);
+ }
+</code></pre>
+
+<h3>Lists</h3>
+
+<p><code>List</code>类型与<code>array</code>相似，但是<code>List</code>类型中的元素可以不同</p>
+
+<h3>struct</h3>
+
+<p>与<code>C</code>相似的是，<code>S</code>语言之中也有结构体</p>
+
+<pre><code>variable person = struct {
+first_name, last_name, age };
+variable bill = @person;
+bill.first_name = "Bill";
+bill.last_name = "Clinton"; 
+bill.age = 51;
+</code></pre>
+
+<p>一般直接用<code>typedef</code>来直接定义结构体</p>
+
+<pre><code> typedef struct {
+ first_name, last_name, age }
+ Person_Type;
+ variable bill = @Person_Type; 
+ bill.first_name = "Bill"; 
+ bill.last_name = "Clinton"; b
+ ill.age = 51;
+</code></pre>
+
+<p>定义的结构体可以直接生成array类型的结构体，如下所示：</p>
+
+<pre><code>People = Person_Type [100]; 
+People[0].first_name = "Bill"; 
+People[1].first_name = "Hillary";
+</code></pre>
+
+<p>对于结构体类型，可以直接用<code>Struct_Type</code>来定义：</p>
+
+<pre><code>People = Struct_Type [100]; 
+People[0] = @person; 
+People[0].first_name = "Bill"; 
+People[1] = @person;
+ People[1].first_name = "Hillary";
+</code></pre>
+
+<h4>结构体初始化函数</h4>
+
+<p>可以用下面的代码进行初始化</p>
+
+<pre><code>define create_person (first, last, age) {
+     variable person = @Person_Type; 
+     person.first_name = first;
+     person.last_name = last;
+     person.age = age;
+     return person;
+ } 
+ variable Bill = create_person ("Bill", "Clinton", 51);
+</code></pre>
+
+<h3>后缀(suffixes)</h3>
+
+<ul>
+<li>R：反斜杠线不会被转义</li>
+<li>Q：反斜杠线会被转义</li>
+<li>B：字符串将会被翻译成二进制字符串</li>
+<li>$：将字符串中的变量读出</li>
+</ul>
+
+
+<p>以下句子表达同一个意思</p>
+
+<pre><code>file = "C:\\windows\\apps\\slrn.rc"; 
+file = "C:\\windows\\apps\\slrn.rc"Q; 
+file = "C:\windows\apps\slrn.rc"R; 
+file = `C:\windows\apps\slrn.rc`; % slang-2.2 and above
+</code></pre>
+
+<h3>Null_Type</h3>
+
+<pre><code>define add_numbers (a, b) {
+    if (a == NULL) a = 0; if (b == NULL) b = 0; 
+    return a + b;
+} 
+ variable c = add_numbers (1, 2); 
+ variable d = add_numbers (1, NULL); 
+ variable e = add_numbers (1,);
+ variable f = add_numbers (,);
+</code></pre>
+
+<h3>Ref_Type</h3>
+
+<pre><code>sin_ref = &amp;sin;
+y = (@sin_ref) (1.0);
+</code></pre>
+
+<h3>其他容器类型</h3>
+
+<ul>
+<li>Array_Type</li>
+<li>Assoc_Type</li>
+<li>List_Type</li>
+<li>Struct_Type</li>
+</ul>
+
+
+<h3>DataType_Type</h3>
+
+<p>对于数据类型，S语言中有很多类型</p>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signed character</td>
+<td>Char_Type</td>
+</tr>
+<tr>
+<td>unsigned character</td>
+<td>UChar_Type</td>
+</tr>
+<tr>
+<td>short integer</td>
+<td>Short_Type</td>
+</tr>
+<tr>
+<td>unsigned short integer</td>
+<td>UShort_Type</td>
+</tr>
+<tr>
+<td>Plain integer</td>
+<td>Integer_Type</td>
+</tr>
+<tr>
+<td>plain unsigned integer</td>
+<td>UInteger_Type</td>
+</tr>
+<tr>
+<td>long integer</td>
+<td>Long_Type</td>
+</tr>
+<tr>
+<td>unsigned long integer</td>
+<td>ULong_Type</td>
+</tr>
+<tr>
+<td>long long integer</td>
+<td>LLong_Type</td>
+</tr>
+<tr>
+<td>single precision real</td>
+<td>Float_Type</td>
+</tr>
+<tr>
+<td>double precision rea</td>
+<td>Double_Type</td>
+</tr>
+<tr>
+<td>complex numbers</td>
+<td>Complex_Type</td>
+</tr>
+<tr>
+<td>strings,C strings</td>
+<td>String_Type</td>
+</tr>
+<tr>
+<td>binary strings</td>
+<td>BString_Type</td>
+</tr>
+<tr>
+<td>structures</td>
+<td>Struct_Type</td>
+</tr>
+<tr>
+<td>references</td>
+<td>Ref_Type</td>
+</tr>
+<tr>
+<td>NULL</td>
+<td>Null_Type</td>
+</tr>
+<tr>
+<td>Arrays</td>
+<td>Array_Type</td>
+</tr>
+<tr>
+<td>associative arrays/hashes</td>
+<td>Assoc_Type</td>
+</tr>
+<tr>
+<td>Lists</td>
+<td>List_Type</td>
+</tr>
+<tr>
+<td>DataType</td>
+<td>DataType_Type</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>数据类型的转换</h3>
+
+<p>对于数据类型的转换，S语言可以用<code>typecast</code>进行转换</p>
+
+<pre><code>variable x=10,y;
+y=typecast (x, Double_Type);
+</code></pre>
+
+<h2>Statement</h2>
+
+<p>一般来说，<code>statement</code>一般是由<code>expressions</code>组成</p>
+
+<h2>function</h2>
+
+<p>编译器中含有两种函数：<code>intrinsic functions</code>和<code>slang functions</code>，函数的声明形式：</p>
+
+<p><code>define function-name (parameter-list ) { statement-list }</code></p>
+
+<p>函数得引用与解引用：</p>
+
+<pre><code>define derivative (f, x)
+{
+    variable h = 1e-6;
+    return ((@f)(x+h) - (@f)(x)) / h;
+}
+define x_squared (x)
+{
+    return x^2;
+}
+dydx = derivative (&amp;x_squared, 3);
+</code></pre>
+
+<p>对于S语言中的函数，可以先不指定输入参数，在函数中可增加输入参数：</p>
+
+<pre><code>define add_10 ()
+{
+    variable x;
+    x = ();
+    return x + 10;
+}
+variable s = add_10 (12); % ==&gt; s = 22;
+</code></pre>
+
+<p>所以函数也可以这么定义：</p>
+
+<pre><code>define function_name ()
+{
+    variable x, y, ..., z;
+    z = ();
+    .
+    .
+    y = ();
+    x = ();
+    .
+    .
+}
+</code></pre>
+
+<p>平均数的求法：</p>
+
+<pre><code>define average_n (n)
+{
+    variable s, x;
+    s = 0;
+    loop (n)
+    {
+        x = (); % get next value from stack
+        s += x;
+    }
+    return s / n;
+}
+</code></pre>
+
+<p>如果不知道输入数据的多少，可以用<code>_NARGS</code>来查看：</p>
+
+<pre><code>define average_n ()
+{
+    variable x, s = 0;
+    if (_NARGS == 0)
+    usage ("ave = average_n (x, ...);");
+    loop (_NARGS)
+    {
+        x = ();
+        s += x;
+    }
+    return s / _NARGS;
+}
+</code></pre>
+
+<p>其中<code>EXIT_BLOCK</code></p>
+
+<h2>NameSpace</h2>
+
+<p>其中<code>Namespace</code>的变量类型有<code>private</code>,<code>public</code>和<code>static</code>，在namespace中增加<code>foo.sl</code>：</p>
+
+<p><code>evalfile("foo.sl","foo")</code></p>
+
+<pre><code>% foo.sl
+variable X = 1;
+variable Y;
+private variable Z;
+public define set_Y (y) { Y = y; }
+define set_z (z) { Z = z; }
+</code></pre>
+
+<h2>Arrays</h2>
+
+<p>直接通过<code>Array_Type</code>来定义数组：</p>
+
+<p><code>variable a = @Array_Type (data-type , integer-array );</code></p>
+
+<p>有时候为了将一维的数组重构，变成二维的数组，可以用<code>reshape</code>函数进行变换：</p>
+
+<p><code>reshape (array-name, integer-array)</code></p>
+
+<p>举个例子来说：</p>
+
+<p><code>varaible a = Double_Type [100];
+reshape(a, [10, 10];</code></p>
+
+<p><code>_reshape</code>类似于<code>reshape</code>函数，它会创建一个新的数组，而不是改变原有数组的形状</p>
+
+<h2>Associative Arrays</h2>
+
+<p>S语言中<code>Assoc_Type</code>类型与<code>C++</code>中的<code>vector</code>类型比较相似，也有点类似于<code>Python</code>中的字典
+创建<code>Assoc_Type</code>类型变量，可以用以下声明:</p>
+
+<pre><code>Assoc_Type [type ]; Assoc_Type [type , default-value ] ; Assoc_Type []
+A = Assoc_Type [Int_Type];
+A["alpha"] = 1;
+A["beta"] = 2;
+A["gamma"] = 3;
+</code></pre>
+
+<p>当<code>Type</code>没有指定的时候，它可以储存任何类型的变量。</p>
+
+<p>对于<code>associative arrays</code>，有以下几种函数对其进行操作：</p>
+
+<ul>
+<li><code>assoc_get_keys</code>： 返回 keys of the array</li>
+<li><code>assoc_get_values</code>：返回 values of the array</li>
+<li><code>assoc_key_exists</code>：是否存在该 key</li>
+<li><code>assoc_delete_key</code>: 删除该key</li>
+</ul>
+
+
+<p>一个计算词频的程序：</p>
+
+<pre><code>a = Assoc_Type [Int_Type];
+foreach word (word_list)
+{
+    if (0 == assoc_key_exists (a, word))
+    a[word] = 0;
+    a[word]++; % same as a[word] = a[word] + 1;
+}
+</code></pre>
+
+<h2>Structures and User-Defined Types</h2>
+
+<p>结构体定义：</p>
+
+<pre><code>t = @Struct_Type ("city_name", "population", "next");
+t = @Struct_Type (["city_name", "population", "next"]);
+</code></pre>
+
+<p>对于结构体中的元素，可以使用<code>dot</code>来访问<code>.</code></p>
+
+<h3>Linked Lists</h3>
+
+<p>通过在结构体中增加<code>next</code>
+<code>t = struct { city_name, population, next };</code></p>
+
+<p>其中可以用下面函数：</p>
+
+<pre><code>define create_population_list ()
+{
+    variable city_name, population, list_root, list_tail;
+    variable next;
+    list_root = NULL;
+    while (read_next_city (&amp;city_name, &amp;population))
+    {
+        next = struct {city_name, population, next };
+        next.city_name = city_name;
+        next.population = population;
+        next.next = NULL;
+        if (list_root == NULL)
+        list_root = next;
+        else
+        list_tail.next = next;
+        list_tail = next;
+    }
+}
+return list_root;
+</code></pre>
+
+<p>使用<code>typedef</code>可以定义新的类型</p>
+
+<h3>操作符的重载</h3>
+
+<p>使用<code>__add_binary</code>可以进行操作符的重载，例如：</p>
+
+<ol>
+<li>定义结构体</li>
+</ol>
+
+
+<p><code>typedef struct { x, y, z } Vector_Type;</code></p>
+
+<ol>
+<li><p>定义初始化</p>
+
+<pre><code> define vector_new (x, y, z)
+ {
+     variable v = @Vector_Type;
+     v.x = double(x); v.y = double(y); v.z = double(z);
+     return v;
+ }
+</code></pre></li>
+<li><p>定义加的操作</p>
+
+<pre><code>     define vector_add (v1, v2)
+     {
+         return vector_new (v1.x+v2.x, v1.y+v2.y, v1.z+v2.z);
+     }
+</code></pre></li>
+<li><p>对变量进行操作</p>
+
+<pre><code>     V1 = vector_new (2,3,4);
+     V2 = vector_new (6,2,1);
+     V3 = vector_new (-3,1,-6);
+     V4 = vector_add (V1, vector_add (V2, V3));
+</code></pre></li>
+</ol>
+
+
+<p>但是有时候，我们想直接用<code>+</code>进行表示，这个时候可以用<code>__add_binary</code>来定义：</p>
+
+<p><code>__add_binary (op , result-type , funct , typeA ,typeB );</code></p>
+
+<p>例如：</p>
+
+<pre><code>define vector_minus (v1, v2)
+{
+    return vector_new (v1.x-v2.x, v1.y-v2.y, v1.z-v2.z);
+}
+__add_binary ("-", Vector_Type, &amp;vector_minus, Vector_Type, Vector_Type);
+define vector_eqs (v1, v2)
+{
+    return (v1.x==v2.x) and (v1.y==v2.y) and (v1.z==v2.z);
+}
+__add_binary ("==", Char_Type, &amp;vector_eqs, Vector_Type, Vector_Type);
+</code></pre>
+
+<h2>Lists</h2>
+
+<p>对于列表的操作，可以用<code>list_insert</code>和<code>list_append</code>进行操作，例如</p>
+
+<p><code>list_insert(list,obj,nth)</code>和<code>list_append(list,obj,nth)</code></p>
+
+<p>也可以直接使用<code>list = {"hi", list};</code>在头部增加元素，<code>list_delete(list,2)</code>即可以删除list中的一个元素。</p>
+
+<p><code>list_pop</code>与<code>list_delete</code>不同的地方在于,<code>list_pop</code>返回的是<code>list</code>的元素。</p>
+
+<h2>debug过程</h2>
+
+<h3>exit</h3>
+
+<pre><code>if (-1 == write_to_file ("/tmp/foo", "bar"))
+{
+    () = fprintf (stderr, "Write failed\n");
+    exit (1);
+}
+</code></pre>
+
+<h3>Exceptions</h3>
+
+<pre><code>define write_to_file (file, str)
+{
+    variable fp = fopen (file, "w");
+    if (fp == NULL)
+    throw OpenError;
+    if (-1 == fputs (str, fp))
+    throw WriteError;
+    if (-1 == fclose (fp))
+    throw WriteError;
+}
+</code></pre>
+
+<h3>try-catch</h3>
+
+<pre><code>try
+{
+    write_to_file ("/tmp/foo", "bar");
+}
+catch OpenError:
+{
+    message ("*** Warning: failed to open /tmp/foo.");
+}
+next_statement;
+</code></pre>
+
+<h3>error的类型</h3>
+
+<pre><code>    AnyError
+    OSError
+    MallocError
+    ImportError
+    ParseError
+    SyntaxError
+    DuplicateDefinitionError
+    UndefinedNameError
+    RunTimeError
+    InvalidParmError
+    TypeMismatchError
+    UserBreakError
+    StackError
+    StackOverflowError
+    StackUnderflowError
+    ReadOnlyError
+    VariableUnitializedError
+    NumArgsError
+    IndexError
+    UsageError
+    ApplicationError
+    InternalError
+    NotImplementedError
+    LimitExceededError
+    MathError
+    DivideByZeroError
+    ArithOverflowError
+    ArithUnderflowError
+    DomainError
+    IOError
+    WriteError
+    ReadError
+    OpenError
+    DataError
+    UnicodeError
+    InvalidUTF8Error
+    UnknownError
+</code></pre>
+
+<p>对于新建的<code>error</code>类型</p>
+
+<p><code>new_exception (exception-name , baseclass , description );</code></p>
+
+<h2>文件操作</h2>
+
+<p>loading files: <code>evalfile</code>,<code>autoload</code> and <code>require</code></p>
+
+<h2>模块<a href="http://www.jedsoft.org/slang/modules/">module</a></h2>
+
+<p>通过<code>import</code>来引入模块，例如<code>import ("pcre");</code></p>
+
+<p>更好的是使用<code>require</code>来引入模块，例如<code>require ("pcre");</code></p>
+
+<p>与C语言的域操作<code>::</code>不同的是，S语言中的域操作是<code>-&gt;</code></p>
+
+<h2>S语言中的文件操作</h2>
+
+<ul>
+<li>fopen： 打开文件</li>
+<li>fclose：关闭文件</li>
+<li>fgets：读取文件中的一行</li>
+<li>fputs：写入文件</li>
+<li>fprintf： 向文件中写入格式文本</li>
+<li>fwrite： 向文件中写入对象</li>
+<li>fread： 读取文件若干行</li>
+<li>fread_bytes：以二进制的格式读取文件</li>
+<li>feof： 是否在文件的结尾</li>
+<li>ferror: 检查是否有错误</li>
+<li>clearerr： 清除文件读入流中的错误</li>
+<li>fflush： 将缓存区文件读出</li>
+<li>ftell： 读取当前文件读取位置</li>
+<li>fseek： 设置文件位置</li>
+<li>fgetslines： 读取文件若干行</li>
+</ul>
+
+
+<p>例子如下：</p>
+
+<pre><code>define count_lines_in_file (file)
+{
+    variable fp, line, count;
+    fp = fopen (file, "r"); % Open the file for reading
+    if (fp == NULL)
+    throw OpenError, "$file failed to open"$;
+    count = 0;
+    while (-1 != fgets (&amp;line, fp))
+    count++;
+    () = fclose (fp);
+    return count;
+}
+</code></pre>
+</body>
+</html>
